@@ -1,22 +1,49 @@
-## Loops in Python: Palindrome Number Checker
+# 🔺 Looping(Patterns)-Pascal's Triangle Generator in Python
+
+This project demonstrates a simple Python program to generate **Pascal’s Triangle**, where the number of rows is provided by the user.
+
+---
 
 ## 🎯 Aim
-To write a Python program that checks whether a given number is a **palindrome** using loops.
+
+To write a Python program that generates **Pascal's Triangle** using numbers. The number of rows is accepted from the user.
+
+---
 
 ## 🧠 Algorithm
-1. Get input from the user and assign it to a variable `num`.
-2. Assign the value of `num` to a temporary variable `temp`.
-3. Initialize a variable `rev` to 0 (used to store the reversed number).
-4. Use a `while` loop to reverse the digits:
-   - While `temp > 0`:
-     - `rev = (10 * rev) + temp % 10`
-     - `temp = temp // 10`
-5. After the loop, compare `rev` with `num`:
-   - If equal, print that the number is a palindrome.
-   - Else, print that it is not a palindrome.
 
-## 🧾 Program
-Add code Here
-## Output
+1. Start the program.
+2. Input the number of rows from the user.
+3. Loop from 0 to the number of rows.
+4. For each row:
+   - Print appropriate spaces to shape the triangle.
+   - Compute values using the formula:  
+     \[
+     C(n, k) = \frac{n!}{k!(n-k)!}
+     \]
+5. Print all rows of Pascal’s Triangle.
+6. End the program.
+
+---
+
+## 🧪 Program
+```
+rows = int(input())
+coef = 1
+
+for i in range(1, rows+1):
+    for space in range(1, rows-i+1):
+        print(" ",end="")
+    for j in range(0, i):
+        if j==0 or i==0:
+            coef = 1
+        else:
+            coef = coef * (i - j)//j
+        print(coef, end = " ")
+    print()
+```
+## Sample Output
+<img width="792" height="825" alt="530213323-bc42bfd1-abd0-4a92-af25-134ddd7e4f15" src="https://github.com/user-attachments/assets/541744b8-3197-4cb9-ac82-08e0ba6380e3" />
 
 ## Result
+
